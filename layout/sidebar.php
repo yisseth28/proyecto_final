@@ -42,7 +42,7 @@
 		<div class="collapse" id="form-elements">
 			<ul class="nav flex-column sub-menu">
 			<li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Consultorio</a></li>
-			<li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Especialidades</a></li>
+			<li class="nav-item"><a class="nav-link" href="especialidades.php">Especialidades</a></li>
 			</ul>
 		</div>
 		<li class="nav-item">
