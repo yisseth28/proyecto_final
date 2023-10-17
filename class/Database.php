@@ -47,7 +47,7 @@
         public function create($data){
             $columns= implode(",", array_keys($data));
             $values=implode("','",array_values($data));
-            $sql=INSERT INTO {$this->table} ({columns}) VALUES (" . "'{$values}');
+            $sql="INSERT INTO {$this->table} ({columns}) VALUES (" . "'{$values}')";
             $this->conexion->query($sql);
         }
         //METODO PARA ACTUALIZAR UN REGISTRO
@@ -56,13 +56,14 @@
             $values=array_values($data);
             $sql="UPDATE {$this->table} SET ";
                 for($i=0; $i<count($columns); $i++){
-                    $sql .= "{$columns[$i]}='{$value[$i]}'";
+                    $sql .= "{$columns[$i]}='{$values[$i]}'";
                     if($i < count($columns)-1){
                         $sql.=", ";
                     }
                 }
                 $sql .= "WHERE id={$id}";
                 $this->conexion->query($sql);
+        }
 
         public function delete($id){
             $sql="DELETE FROM {$this->table} WHERE id={$id}";
