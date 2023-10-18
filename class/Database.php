@@ -48,7 +48,8 @@
             $columns= implode(",", array_keys($data));
             $values=implode("','",array_values($data));
             $sql="INSERT INTO {$this->table} ({columns}) VALUES (" . "'{$values}')";
-            $this->conexion->query($sql);
+            $response=$this->conexion->query($sql);
+            return $response;
         }
         //METODO PARA ACTUALIZAR UN REGISTRO
         public function update ($id, $data){

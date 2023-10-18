@@ -16,9 +16,10 @@
                   <div class="card-body">
                     <h3>Administrador de Usuarios</h3>
                     <hr>
-                    <button class="btn btn-outline-primary btn-fw btn-sm align-items-end" >Nuevo Usuario</button>
-                      <table class="table table-hover table-striped" >
-                        <thead>
+                    <a href="user_new.php" class="btn btn-outline-primary btn-fw btn-sm align-items-end" >Nuevo Usuario </a>
+                    <div class="table-responsive">  
+                      <table class="table table-hover table-striped">
+                      <thead>
                           <tr>
                             <th>Id</th>
                             <th>Nombre</th>
@@ -30,8 +31,8 @@
                             <th></th>
                             <th></th>
                           </tr>
-                        </thead>
-                        <tbody>
+                      </thead>
+                      <tbody>
                         <?php foreach($users as $user):?>
                           <tr>
                             <td><?=$user['id']?></td>
@@ -50,7 +51,8 @@
                           </tr>
                         <?php endforeach; ?>
                       </tbody>
-                    </table>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
