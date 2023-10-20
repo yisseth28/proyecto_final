@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require_once "class/User.php";
   require_once "layout/header.php";
   $user=new User;
@@ -17,7 +18,12 @@
                     <h3>Administrador de Usuarios</h3>
                     <hr>
                     <a href="user_new.php" class="btn btn-outline-primary btn-fw btn-sm align-items-end" >Nuevo Usuario </a>
-                    <div class="table-responsive">  
+                    <?php if(isset($_SESSION['success'])):?>
+                    <div class="alert alert-success mt-3" role="alert">
+                      <?= $_SESSION['success'];?> 
+                    </div>
+                    <?php endif; ?>
+                    <div class="table-responsive">
                       <table class="table table-hover table-striped">
                       <thead>
                           <tr>

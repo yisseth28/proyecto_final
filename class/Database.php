@@ -47,7 +47,7 @@
         public function create($data){
             $columns= implode(",", array_keys($data));
             $values=implode("','",array_values($data));
-            $sql="INSERT INTO {$this->table} ({columns}) VALUES (" . "'{$values}')";
+            $sql="INSERT INTO {$this->table} ({$columns}) VALUES (" . "'{$values}')";
             $response=$this->conexion->query($sql);
             return $response;
         }

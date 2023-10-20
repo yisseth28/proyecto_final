@@ -1,11 +1,11 @@
 <?php
-  require_once "class/User.php";
-  require_once "layout/header.php";
+  require_once 'class/User.php';
+  require_once 'layout/header.php';
   ?>
   <div class="container-scroller">
-    <?php include_once "layout/topbar.php" ?>
+    <?php include_once "layout/topbar.php"; ?>
     <div class="container-fluid page-body-wrapper">
-      <?php include_once "layout/sidebar.php"  ?>
+      <?php include_once "layout/sidebar.php";  ?>
       <div class="main-panel">
         <div class="content-wrapper">
             <div class="row">
@@ -14,7 +14,7 @@
                   <div class="card-body">
                     <h3>Nuevo Usuario</h3>
                     <hr>
-                    <form class="forms-sample" action="process_user.php" method="POST">
+                  <form class="forms-sample" action="process_user.php" method="POST">
                     <div class="form-group row">
                       <label for="name" class="col-sm-3 col-form-label">Nombre</label>
                         <div class="col-sm-9">
@@ -28,9 +28,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                      <label for="password" class="col-sm-3 col-form-label">Contraseña</label>
+                      <label for="pass" class="col-sm-3 col-form-label">Contraseña</label>
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" name="password" placeholder="Ingrese su Contraseña" required>
+                            <input type="password" class="form-control" name="pass" placeholder="Ingrese su Contraseña" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -53,10 +53,10 @@
                     <button type="submit" class="btn btn-primary me-2">Guardar</button>
                     <button class="btn btn-light">Cancelar</button>
                   </form>
-                  </div>
                 </div>
               </div>
             </div>
+          </div>
         </div>
         <?php include_once "partials/footer.php"; ?>
       </div>
