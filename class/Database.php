@@ -35,14 +35,12 @@
             return $this->query->fetch_all(MYSQLI_ASSOC);
         }
 
-        //METODO PARA CREAR UN NUEVO REGISTRO
-        //public function create($data){
-        //    $sql="INSERT INTO users (name, email, password, type, status, created_at, updated_at) VALUES ({$data['name']},{$data['email']},{$data['password']},{$data['type']},{$data['status']},{$data['created_at']},{$data['updated_at']})";
-        //    $this->conexion->query($sql);
-        //}
-        //METODO ARRAY_KEYS($data)=> devuelve unicamente los encabezados
-        //METODO ARRAY_VALUES($data)=>devuelve los valores de un array
-        //implode divide un array y convierte en string con un separador ejm: implode(separador, array)
+        //BUSQUEDA POR CUALQUIER CAMPO DE LA TABLA
+        public function selectForField($column,$value){
+            $sql="SELECT * FROM {$this->table} WHERE {$column}='{$value}'";
+            $this->query = $this->conexion->query($sql);
+            return $this->query->fetch_all(MYSQLI_ASSOC);
+        }
         
         public function create($data){
             $columns= implode(",", array_keys($data));

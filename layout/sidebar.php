@@ -6,32 +6,35 @@
 			<span class="menu-title">Inicio</span>
 		</a>
 		</li>
-		<li class="nav-item nav-category">Menú Doctores</li>
-		<li class="nav-item">
-		<a class="nav-link" href="citas.php">
+		<?php if($_SESSION['type']== 'Doctor'):?>
+			<li class="nav-item nav-category">Menú Doctores</li>
+			<li class="nav-item">
+			<a class="nav-link" href="citas.php">
 			<i class="menu-icon mdi mdi-file-document"></i>
 			<span class="menu-title">Citas</span>
-		</a>
-		</li>
-		<li class="nav-item">
-		<a class="nav-link" href="pacientes.php">
+			</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="pacientes.php">
 			<i class="menu-icon mdi mdi-file-document"></i>
 			<span class="menu-title">Pacientes</span>
-		</a>
-		</li>
-		<li class="nav-item">
-		<a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+			</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
 			<i class="menu-icon mdi mdi-floor-plan"></i>
 			<span class="menu-title">Reportes</span>
 			<i class="menu-arrow"></i> 
-		</a>
-		<div class="collapse" id="ui-basic">
+			</a>
+			<div class="collapse" id="ui-basic">
 			<ul class="nav flex-column sub-menu">
 			<li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Citas del día</a></li>
 			<li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Citas canceladas</a></li>
 			</ul>
-		</div>
-		</li>
+			</div>
+			</li>
+		<?php endif; ?>
+		<?php if($_SESSION['type']== 'Administrador'):?>
 		<li class="nav-item nav-category">Menú Administrador</li>
 		<li class="nav-item">
 		<a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
@@ -50,7 +53,8 @@
 			<i class="menu-icon mdi mdi-file-document"></i>
 			<span class="menu-title">Usuarios</span>
 		</a>
-		</li>	
+		</li>
+		<?php endif; ?>
 	</ul>
 </nav>
 		

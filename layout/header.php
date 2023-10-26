@@ -1,4 +1,7 @@
-<?php include_once 'config/settings.php';?>
+<?php
+session_start();
+include_once 'config/settings.php';
+?>
 !DOCTYPE html>
 <html lang="en">
 <head>

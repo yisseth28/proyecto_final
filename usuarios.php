@@ -18,11 +18,7 @@
                     <h3>Administrador de Usuarios</h3>
                     <hr>
                     <a href="user_new.php" class="btn btn-outline-primary btn-fw btn-sm align-items-end" >Nuevo Usuario </a>
-                    <?php if(isset($_SESSION['success'])):?>
-                    <div class="alert alert-success mt-3" role="alert">
-                      <?= $_SESSION['success'];?> 
-                    </div>
-                    <?php endif; ?>
+                    <?php include_once "partials/alerts.php";?>
                     <div class="table-responsive">
                       <table class="table table-hover table-striped">
                       <thead>
@@ -34,7 +30,6 @@
                             <th>Estado</th>
                             <th>Usuario desde</th>
                             <th>Ultimo cambio</th>
-                            <th></th>
                             <th></th>
                           </tr>
                       </thead>
@@ -49,10 +44,11 @@
                             <td><?=$user['created_at']?></td>
                             <td><?=$user['updated_at']?></td>
                             <td>
-                              <button class="btn btn-outline-info btn-fw btn-sm">Editar</button>
-                            </td>
-                            <td>
-                              <button class="btn btn-outline-danger btn-fw btn-sm">Eliminar</button>
+                              <form action="process_user.php" method="POST" onsubmit="return eliminar()">
+                                <input type="hidden" value="delete" name="action">
+                                <input type="hidden" name="id" value="<?=$user['id']?>">
+                                <button type="submit" class="btn btn-outline-danger btn-fw btn-sm">Eliminar</button>
+                              </form>
                             </td>
                           </tr>
                         <?php endforeach; ?>
@@ -68,4 +64,12 @@
       </div>
     </div>
   </div>
+  <script>
+    function eliminar(){
+      return confirm("¿Está seguro de eliminar el usuario?");
+    }
+  </script>
   <?php require_once "layout/footer.php"?>
+  
+
+
