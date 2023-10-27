@@ -15,6 +15,9 @@ if(isset($_POST['action'])){
     case 'auth':
       auth();
       break;
+    case 'logout':
+      logout();
+      break;
   }   
 }
 function insert(){
@@ -103,8 +106,13 @@ function insert(){
     $_SESSION['name']=$query[0]['name'];
     $_SESSION['email']=$query[0]['email'];
     $_SESSION['type']=$query[0]['type'];
+    $_SESSION['isLogged']= true;
 
 
     header('location: dashboard.php');
+  }
+  function logout(){
+    session_destroy();
+    header('location: index.php');
   }
 

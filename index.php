@@ -1,5 +1,8 @@
 <?php
+
 session_start();
+require_once 'class/User.php';
+User::logged();
 require_once "layout/header-login.php";
 ?>
   <div class="container-scroller">

@@ -154,10 +154,13 @@
               <div class="dropdown-header text-center">
                 <img class="img-md rounded-circle" src="<?=RESOURCES?>/images/faces/face8.jpg" alt="Profile image">
                 <p class="mb-1 mt-3 font-weight-semibold"><?= $_SESSION['name'] ?></p>
-                <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
+                <p class="fw-light text-muted mb-0"><?= $_SESSION['email'] ?></p>
               </div>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mi Perfil <span class="badge badge-pill badge-danger">1</span></a>
-              <a href="index.php" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Cerras sesión</a>
+              <form action="process_user.php" method="post">
+                <input type="hidden" name="action" value="logout">
+                <button type="submit" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Cerras sesión</button>
+              </form>
             </div>
           </li>
         </ul>

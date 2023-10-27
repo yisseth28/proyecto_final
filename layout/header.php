@@ -1,4 +1,5 @@
 <?php
+print_r(session_status());
 session_start();
 include_once 'config/settings.php';
 ?>

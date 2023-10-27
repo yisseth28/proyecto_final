@@ -2,6 +2,7 @@
   session_start();
   require_once "class/User.php";
   require_once "layout/header.php";
+  User::auth();
   $user=new User;
   $users=$user->selectALL();
 ?>

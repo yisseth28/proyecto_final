@@ -1,8 +1,12 @@
-<?php require_once "layout/header.php"?>
+<?php
+require_once "class/User.php";
+require_once "layout/header.php";
+User::auth();
+?>
   <div class="container-scroller">
-    <?php include_once "layout/topbar.php" ?>
+    <?php include_once "layout/topbar.php"; ?>
     <div class="container-fluid page-body-wrapper">
-      <?php include_once "layout/sidebar.php"  ?>
+      <?php include_once "layout/sidebar.php"; ?>
       <div class="main-panel">
         <div class="content-wrapper">
             <h1>Dashboard</h1>
