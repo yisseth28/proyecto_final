@@ -1,4 +1,6 @@
 <?php
+require_once 'class/User.php';
+User::logged();
 require_once "layout/header-login.php";
 ?>
   <div class="container-scroller">
@@ -11,27 +13,26 @@ require_once "layout/header-login.php";
                 <img src="assets/images/logo.svg" alt="logo">
               </div>
               <?php include_once 'partials/alerts.php';?>
-              <h4>Creación de citas</h4>
-              <h6 class="fw-light">Ingresar los datos para asignar su cita</h6>
+              <h4>Hola! Empecemos</h4>
+              <h6 class="fw-light">Inicia sesión para continuar.</h6>
               <form class="pt-3" method="post" action="process_user.php">
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" name="telefono" placeholder="Ingrese su número de teléfono">
+                  <input type="email" class="form-control form-control-lg" name="email" placeholder="Correo Electrónico">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" name="name" placeholder="Ingrese su nombre">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" name="lastname" placeholder="Ingrese su apellido">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" name="tipo" placeholder="Ingrese su tipo documento">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" name="documento" placeholder="Ingrese su número de documento">
+                  <input type="password" class="form-control form-control-lg" name="passwd" placeholder="Contraseña">
                 </div>
                 <div class="mt-3">
                   <input type="hidden" name="action" value="auth">
                   <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">INICIAR SESIÓN</button>
+                </div>
+                <div class="my-2 d-flex justify-content-between align-items-center">
+                  <div class="form-check">
+                    <label class="form-check-label text-muted">
+                      <input type="checkbox" class="form-check-input">
+                      Recuerdame
+                    </label>
+                  </div>
                 </div>
                 <!--<div class="text-center mt-4 fw-light">
                   No tienes cuenta? <a href="user_new.php" class="text-primary">Crear</a>
