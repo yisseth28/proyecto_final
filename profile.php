@@ -57,7 +57,7 @@
                                     <input type="number" class="form-control" name="phone" value="<?= !empty($query[0]['phone']) ? $query[0]['phone'] :'' ?>"placeholder="Telefono">
                                 </div>
                                 
-                                <!-- <div class="form-group">
+                                <div class="form-group">
                                     <p>Seleccione los dias que trabaja</p>
                                     <input type="checkbox" name="work_days[]" value="1" <?= (in_array("1", $workDays)) ? 'checked': '' ?>> Lunes
                                     <input type="checkbox" name="work_days[]" value="2" <?= (in_array("2", $workDays)) ? 'checked': '' ?>> Martes
@@ -65,9 +65,9 @@
                                     <input type="checkbox" name="work_days[]" value="4" <?= (in_array("4", $workDays)) ? 'checked': '' ?>> Jueves
                                     <input type="checkbox" name="work_days[]" value="5" <?= (in_array("5", $workDays)) ? 'checked': '' ?>> Viernes
                                     <input type="checkbox" name="work_days[]" value="6" <?= (in_array("6", $workDays)) ? 'checked': '' ?>> Sabado
-                                </div> -->
+                                </div>
         
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <p>Seleccione su horario de trabajo</p>
                                     <input type="checkbox" name="working_hours[]" value="9" <?= (in_array("9", $workingHours)) ? 'checked': '' ?>> 09
                                     <input type="checkbox" name="working_hours[]" value="10"<?= (in_array("10", $workingHours)) ? 'checked': '' ?>> 10
@@ -80,7 +80,7 @@
                                     <input type="checkbox" name="working_hours[]" value="17"<?= (in_array("17", $workingHours)) ? 'checked': '' ?>> 17
                                     <input type="checkbox" name="working_hours[]" value="18"<?= (in_array("18", $workingHours)) ? 'checked': '' ?>> 18
                                     <input type="checkbox" name="working_hours[]" value="19"<?= (in_array("19", $workingHours)) ? 'checked': '' ?>> 19
-                                </div>
+                                </div> -->
                                 <button type="submit" class="btn btn-primary">Guardar</button>
                             </form>
                         </div>

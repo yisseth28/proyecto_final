@@ -1,8 +1,9 @@
 <?php  
   require_once "layout/header-login.php";
   require_once 'class/Doctor.php';
-  //$doctor = new Doctor;
+  $doctor = new Doctor;
   $data = $doctor->loadDoctors();
+  //Buscar por el numero y tipo de documento si existe el paciente
 ?>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -16,19 +17,27 @@
               <h4>Registre su cita</h4>
               <h6 class="fw-light">Todos los campos son obligatorios</h6>
               <?php include_once 'partials/alerts.php' ?>
-              <form class="pt-3" method="post" action="steptwo.php">
+              <form class="pt-3" method="post" action="stepthree.php">
                 <div class="form-group">
-                    <select name="document_type" class="form-control form-control-lg">
+                  <input type="number" class="form-control form-control-lg" name="phone" placeholder="Ingrese su numero de telefono">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" name="name" placeholder="Ingrese su(s) nombre(s)">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" name="lastname" placeholder="Ingrese sus apellidos">
+                </div>
+                <div class="form-group">
+                <label for="doctor">Seleccione el doctor</label>
+                    <select name="doctor" class="form-control form-control-lg" id="selectDoctor">
                       <option value="" disabled selected>Seleccionar</option>
-                      <option value="CC">Cedula de ciudadania</option>
-                      <option value="CE">Cedula de extranjeria</option>
-                      <option value="Pasaporte">Pasaporte</option>
+                      <?php foreach($data as $row):?>
+                        <option value="<?= $row['id']?>"><?= "{$row['name']} - {$row['specialty']}" ?></option>
+                      <?php endforeach; ?>
                     </select>
                 </div>
-                <div class="form-group">
-                  <input type="number" class="form-control form-control-lg" name="document_number" placeholder="Ingrese numero">
-                </div>
                 <div class="mt-3">
+                  <input type="hidden" name="action" value="auth">
                   <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Continuar</button>
                 </div>
               </form>

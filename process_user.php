@@ -103,6 +103,7 @@ function insert(){
       return;
     }
     //VARIABLES DE SESION CON INFORMACIÓN DEL USUARIO
+    $_SESSION['id']=$query[0]['id'];
     $_SESSION['name']=$query[0]['name'];
     $_SESSION['email']=$query[0]['email'];
     $_SESSION['type']=$query[0]['type'];
