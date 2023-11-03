@@ -1,7 +1,7 @@
 <?php  
   require_once "layout/header-login.php";
   require_once 'class/Doctor.php';
-  //$doctor = new Doctor;
+  $doctor = new Doctor;
   $data = $doctor->loadDoctors();
 ?>
   <div class="container-scroller">

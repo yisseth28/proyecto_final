@@ -65,20 +65,18 @@
         try{
             $date = date('Y-m-d H:i:s');
             $data = [
-                'user_id' => $_SESSION['id'],
                 'specialty' => trim($_POST['speciality']),
                 'professional_id' => trim($_POST['professional_id']),
                 'address' => trim($_POST['address']),
                 'phone' => trim($_POST['phone']),
                 'work_days' =>json_encode($_POST['work_days']),
                 'working_hours' => json_encode($_POST['working_hours']),
-                'created_at' => $date,
                 'updated_at' => $date
             ];
             $doctor = new Doctor;
-            $response = $doctor->create($data);
+            $response = $doctor->update($_POST['id'], $data);
             if($response){
-                $_SESSION['success'] = 'Datos agregados correctamente';
+                $_SESSION['success'] = 'Oeración exitosa';
                 header('Location: profile.php');
             }else{
                 $_SESSION['error'] = "No se pudo guardar la información...";

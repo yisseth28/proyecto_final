@@ -61,7 +61,8 @@
                     }
                 }
                 $sql .= "WHERE id={$id}";
-                $this->conexion->query($sql);
+                return $this->conexion->query($sql);
+                 
         }
 
         public function delete($id){
