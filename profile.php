@@ -8,6 +8,8 @@
     $specialities =  $speciality->list();
     $doctor = new Doctor;
     $query = $doctor->selectForField('user_id', $_SESSION['id']);
+    $workDays=[];
+    $workingHours=[];
     if($query){
         $workDays = json_decode($query[0]['work_days']);
         $workingHours = json_decode($query[0]['working_hours']);

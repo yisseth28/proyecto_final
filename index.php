@@ -30,6 +30,7 @@
                 </div>
                 <div class="mt-3">
                   <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Continuar</button>
+                  <a href="login.php" class="btn btn-block btn-danger btn-lg font-weight-medium auth-form-btn">Iniciar sesion</a>
                 </div>
               </form>
             </div>
